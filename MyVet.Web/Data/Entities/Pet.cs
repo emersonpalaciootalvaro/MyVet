@@ -21,9 +21,9 @@ namespace MyVet.Web.Data.Entities
         [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string Race { get; set; }
 
-        //public Owner Owner { get; set; }
+        public Owner Owner { get; set; }
 
-        //public PetType PetType { get; set; }
+        public PetType PetType { get; set; }
 
         [Display(Name = "Born*")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
@@ -32,13 +32,14 @@ namespace MyVet.Web.Data.Entities
         public DateTime Born { get; set; }
 
         [Display(Name = "Born*")]
-       // [DataType(DataType.DateTime)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")] 
         public DateTime BornLoca => Born.ToLocalTime();
 
         public string Remarks { get; set; }
 
-       // public ICollection<History> Histories { get; set; }
+        public ICollection<History> Histories { get; set; }
+        public ICollection<Agenda> Agendas { get; set; }
 
         //TODO: replace the correct URL for the image
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)

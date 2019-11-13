@@ -17,12 +17,12 @@ namespace MyVet.Web.Data.Entities
         public DateTime Date { get; set; }
 
         [Display(Name = "Date*")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}"]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
-        //public Owner Owner { get; set; }
+        public Owner Owner { get; set; }
 
-        //public Pet Pet { get; set; }
+        public Pet Pet { get; set; }
 
         public string Remarks { get; set; }
 
